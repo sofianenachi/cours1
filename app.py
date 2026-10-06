@@ -33,7 +33,8 @@ COURSE = {
     "prof": "الأستاذ: ناشي سفيان",
     "univ": "جامعة وهران 2",
     "dept": "قسم العلوم الاقتصادية",
-    "year": "2025 - 2026",
+    "year": "2026 - 2027",
+    " Target audiance " : " MASTER 2 : EGE - EI - EMF" , 
 }
 
 CSS = """
