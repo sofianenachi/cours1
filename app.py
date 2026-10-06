@@ -1007,6 +1007,18 @@ with st.sidebar:
                 f"{COURSE['year']}</div>", unsafe_allow_html=True)
     st.divider()
     st.radio("محاور الدرس الأول", LABELS, key="nav")
+    st.divider()
+    try:
+        from make_pdf import build_pdf
+
+        @st.cache_data
+        def _pdf_bytes():
+            return build_pdf()
+
+        st.download_button("📄 تنزيل مذكرة الدرس (PDF)", _pdf_bytes(),
+                           "lesson1.pdf", "application/pdf", width="stretch")
+    except Exception as e:  # noqa: BLE001
+        st.caption(f"تعذّر إنشاء ملف PDF: {e}")
 
 PAGES[st.session_state.nav]()
 
